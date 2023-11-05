@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+ <!--SHELTER_LOCATION TABLE-->
+ <changeSet id="create-shelter-location-table" author="skanash">
+  <preConditions>
+   <not>
+    <tableExists tableName="shelter_location"/>
+   </not>
+  </preConditions>
+  <createTable tableName="shelter_location">
+   <column name="id" type="BIGINT" autoIncrement="true">
+    <constraints primaryKey="true" />
+   </column>
+   <column name="address" type="varchar(30)">
+    <constraints nullable="false"/>
+   </column>
+   <column name="city" type="varchar(30)">
+    <constraints nullable="false"/>
+   </column>
+   <column name="state" type="varchar(30)">
+    <constraints nullable="false"/>
+   </column>
+   <column name="zipcode" type="varchar(30)">
+    <constraints nullable="false"/>
+   </column>
+   <column name="shelter_location_time" type="DATETIME(6)">
+    <constraints nullable="true" />
+   </column>
+  </createTable>
+
+  <createIndex tableName="shelter_location" indexName="IDX_SHELTER_LOCATION_DATE_TIME">
+   <column name="shelter_location_time"/>
+  </createIndex>
+ </changeSet>
+
+
+
+
+
+
+
+</databaseChangeLog>

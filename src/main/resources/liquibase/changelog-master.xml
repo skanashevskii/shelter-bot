@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <!--TABLES-->
+    <include file="scripts/create-table-user.xml" relativeToChangelogFile="true" />
+    <include file="scripts/create-table-animal.xml" relativeToChangelogFile="true" />
+    <include file="scripts/create-table-shelter.xml" relativeToChangelogFile="true" />
+    <include file="scripts/create-table-shelter-location.xml" relativeToChangelogFile="true" />
+    <include file="scripts/create-table-reports.xml" relativeToChangelogFile="true" />
+    <include file="scripts/create-table-avatar.xml" relativeToChangelogFile="true" />
+
+    <!--COLUMNS-->
+    <include file="scripts/add-columns-to-animal.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-columns-to-app-user.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-columns-to-avatar.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-columns-to-shelter1.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-columns-to-reports1.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-columns-to-reports2.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-columns-to-shelter.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-columns-to-shelter_location.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-columns-to-shelter_location2.xml" relativeToChangelogFile="true" />
+
+    <!--FOREIGN KEYS-->
+    <include file="scripts/add-foreign-keys-to-animal.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-foreign-keys-to-app-user.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-foreign-keys-to-avatar.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-foreign-keys-to-reports.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-foreign-keys-to-shelter.xml" relativeToChangelogFile="true" />
+    <include file="scripts/add-foreign-keys-to-shelter-location.xml" relativeToChangelogFile="true" />
+
+
+
+</databaseChangeLog>

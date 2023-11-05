@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+ <!--USER TABLE-->
+ <changeSet id="create-user-table" author="skanash">
+  <preConditions>
+   <not>
+    <tableExists tableName="app_user"/>
+   </not>
+  </preConditions>
+  <createTable tableName="app_user">
+   <column name="id" type="BIGINT" autoIncrement="true">
+    <constraints primaryKey="true" />
+   </column>
+   <column name="chat_id" type="BIGINT">
+    <constraints nullable="true" />
+   </column>
+   <column name="name" type="varchar(30)">
+    <constraints nullable="false"/>
+   </column>
+   <column name="family" type="varchar(30)">
+    <constraints nullable="true" />
+   </column>
+   <column name="role" type="varchar(30)">
+    <constraints nullable="true" />
+   </column>
+   <column name="telephone_number" type="varchar(30)">
+    <constraints nullable="true" />
+   </column>
+   <column name="email" type="varchar(30)">
+    <constraints nullable="true" />
+   </column>
+   <column name="access_level" type="varchar(30)">
+    <constraints nullable="true" />
+   </column>
+   <column name="user_time" type="DATETIME(6)">
+    <constraints nullable="true" />
+   </column>
+  </createTable>
+
+  <createIndex tableName="app_user" indexName="IDX_USER_DATE_TIME">
+   <column name="user_time"/>
+  </createIndex>
+ </changeSet>
+
+
+
+
+
+
+
+</databaseChangeLog>

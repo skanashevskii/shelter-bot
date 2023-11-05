@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+ <!--SHELTER TABLE-->
+ <changeSet id="create-shelter-table" author="skanash">
+  <preConditions>
+   <not>
+    <tableExists tableName="shelter"/>
+   </not>
+  </preConditions>
+  <createTable tableName="shelter">
+   <column name="id" type="BIGINT" autoIncrement="true">
+    <constraints primaryKey="true" />
+   </column>
+   <column name="name" type="varchar(255)">
+    <constraints nullable="false"/>
+   </column>
+   <column name="safety_advise" type="varchar(1024)">
+    <constraints nullable="false" />
+   </column>
+   <column name="shelter_time" type="DATETIME(6)">
+    <constraints nullable="true" />
+   </column>
+  </createTable>
+
+  <createIndex tableName="shelter" indexName="IDX_SHELTER_DATE_TIME">
+   <column name="shelter_time"/>
+  </createIndex>
+ </changeSet>
+
+
+
+
+
+
+
+</databaseChangeLog>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <!-- Создание внешних ключей для reports -->
+    <changeSet id="add-foreign-keys-to-reports" author="skanash">
+        <!-- Внешний ключ на другую таблицу (например, user) -->
+        <addForeignKeyConstraint
+            baseColumnNames="user_id"
+            baseTableName="reports"
+            constraintName="FK_REPORTS_USER"
+            referencedColumnNames="id"
+            referencedTableName="app_user"
+            onDelete="NO ACTION"
+            onUpdate="NO ACTION"
+        />
+        <addForeignKeyConstraint
+                baseColumnNames="animal_id"
+                baseTableName="reports"
+                constraintName="FK_REPORTS_ANIMAL"
+                referencedColumnNames="id"
+                referencedTableName="animal"
+                onDelete="NO ACTION"
+                onUpdate="NO ACTION"
+        />
+
+
+</changeSet>
+</databaseChangeLog>

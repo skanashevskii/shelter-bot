@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+ <!--REPORT TABLE-->
+ <changeSet id="create-report-table" author="skanash">
+  <preConditions>
+   <not>
+    <tableExists tableName="reports"/>
+   </not>
+  </preConditions>
+  <createTable tableName="reports">
+   <column name="id" type="BIGINT" autoIncrement="true">
+    <constraints primaryKey="true" />
+   </column>
+   <column name="report_date" type="DATETIME(6)">
+    <constraints nullable="true"/>
+   </column>
+   <column name="file_path" type="varchar(255)">
+    <constraints nullable="false"/>
+   </column>
+   <column name="access_level" type="varchar(255)">
+    <constraints nullable="false"/>
+   </column>
+   <column name="report_time" type="DATETIME(6)">
+    <constraints nullable="true" />
+   </column>
+  </createTable>
+
+  <createIndex tableName="reports" indexName="IDX_REPORT_DATE_TIME">
+   <column name="report_time"/>
+  </createIndex>
+ </changeSet>
+
+
+
+
+
+
+
+
+</databaseChangeLog>

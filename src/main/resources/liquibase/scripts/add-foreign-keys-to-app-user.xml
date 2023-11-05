@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+
+    <!-- ADD FOREIGN KEYS -->
+    <changeSet id="add-foreign-keys-to-app-user" author="skanash">
+        <addForeignKeyConstraint
+                baseColumnNames="shelter_id"
+                baseTableName="app_user"
+                constraintName="FK_APP_USER_SHELTER"
+                referencedColumnNames="id"
+                referencedTableName="shelter"
+                onDelete="NO ACTION"
+                onUpdate="NO ACTION"
+        />
+
+    </changeSet>
+</databaseChangeLog>
